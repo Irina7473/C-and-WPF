@@ -5,8 +5,115 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="480" Width="255">
     <Grid>
+        <TextBox x:Name="TextBox_Input" 
+                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" 
+                   Height="100" Width="220" FontSize="20" 
+                   TextWrapping="Wrap" />
+
+        <TextBlock x:Name="TextBlock_Result"
+                     HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,115,0,0" 
+                     Height="40" Width="110" FontSize="20"  
+                     Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}"
+                     TextWrapping="Wrap" />
+        
+        <Button x:Name="Button_Sign" 
+                Content="+/-" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,0" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_0" 
+                Content="0" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,0,0,0" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_Comma" 
+                Content="," 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="120,0,0,0" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_1" 
+                Content="1" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,55" 
+                Height="50" Width="50" FontSize="20" 
+                Click="Button_1_Click"/>
+
+        <Button x:Name="Button_2" 
+                Content="2" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,0,0,55" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_3" 
+                Content="3" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="120,0,0,55" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_4" 
+                Content="4" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,110" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_5" 
+                Content="5" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,0,0,110" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_6" 
+                Content="6" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="120,0,0,110" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_7" 
+                Content="7" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,165" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_8" 
+                Content="8" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,0,0,165" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_9" 
+                Content="9" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="120,0,0,165" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_Plus" 
+                Content="+" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="180,0,0,0" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_Minus" 
+                Content="-" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="180,0,0,55"
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_Multiplication" 
+                Content="*" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="180,0,0,110" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_Division" 
+                Content="/" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="180,0,0,165" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_Clear" 
+                Content="C" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,220" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_Delete" 
+                Content="x" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,0,0,220" 
+                Height="50" Width="50" FontSize="20" />
+
+        <Button x:Name="Button_Result" 
+                Content="=" 
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="120,0,0,220" 
+                Height="50" Width="110" FontSize="20" 
+                Background="#FF9BC4E0" />
 
     </Grid>
 </Window>
