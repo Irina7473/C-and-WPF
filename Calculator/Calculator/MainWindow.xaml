@@ -32,7 +32,8 @@
         <Button x:Name="Button_Comma" 
                 Content="," 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="120,0,0,0" 
-                Height="50" Width="50" FontSize="20" />
+                Height="50" Width="50" FontSize="20"
+                Click="Button_Comma_Click" />
 
         <Button x:Name="Button_1" 
                 Content="1" 
