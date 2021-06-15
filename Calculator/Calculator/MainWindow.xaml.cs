@@ -25,83 +25,28 @@ namespace Calculator
             InitializeComponent();
         }
 
-        string InputNumber1 = "0";
+        string InputNumber1 = "";
         string InputNumber2 = "";
-        double number1, number2, result;
+        double resultNumber = 0;        
         int operation=0;
-        
-        enum Operation {plus, minus, multiplication, division};
-
-        private void Button_0_Click(object sender, RoutedEventArgs e)
+                
+        private void Button_Digit_Click(object sender, RoutedEventArgs e)
         {
-            TextBox_Input.Text += (string)Button_0.Content;
-            if (InputNumber1 != "") InputNumber1 += (string)Button_0.Content;
-            else InputNumber2 += (string)Button_0.Content;
+            string digit = "";
+            var symbol = (Button)sender;
+            foreach (char d in symbol.Name)
+                    if (char.IsDigit(d)) digit = Convert.ToString(d);
+                       
+            TextBox_Input.Text += digit;
+            if (operation == 0)
+            {
+                TextBlock_Result.Text = "";
+                InputNumber1 += digit;
+            }
+            else InputNumber2 += digit;
         }
-
-        private void Button_1_Click(object sender, RoutedEventArgs e)
-        {
-            TextBox_Input.Text += (string)Button_1.Content;
-            if (InputNumber1 != "") InputNumber1 += (string)Button_1.Content;
-            else InputNumber2 += (string)Button_1.Content;            
-        }
-
-        private void Button_2_Click(object sender, RoutedEventArgs e)
-        {
-            TextBox_Input.Text += (string)Button_2.Content;
-            if (InputNumber1 !="") InputNumber1 += (string)Button_2.Content;
-            else InputNumber2 += (string)Button_2.Content;            
-        }
-
-        private void Button_3_Click(object sender, RoutedEventArgs e)
-        {
-            TextBox_Input.Text += (string)Button_3.Content;
-            if (InputNumber1 != "") InputNumber1 += (string)Button_3.Content;
-            else InputNumber2 += (string)Button_3.Content;
-        }
-
-        private void Button_4_Click(object sender, RoutedEventArgs e)
-        {
-            TextBox_Input.Text += (string)Button_4.Content;
-            if (InputNumber1 != "") InputNumber1 += (string)Button_4.Content;
-            else InputNumber2 += (string)Button_4.Content;
-        }
-
-        private void Button_5_Click(object sender, RoutedEventArgs e)
-        {
-            TextBox_Input.Text += (string)Button_5.Content;
-            if (InputNumber1 != "") InputNumber1 += (string)Button_5.Content;
-            else InputNumber2 += (string)Button_5.Content;
-        }
-
-        private void Button_6_Click(object sender, RoutedEventArgs e)
-        {
-            TextBox_Input.Text += (string)Button_6.Content;
-            if (InputNumber1 != "") InputNumber1 += (string)Button_6.Content;
-            else InputNumber2 += (string)Button_6.Content;
-        }
-
-        private void Button_7_Click(object sender, RoutedEventArgs e)
-        {
-            TextBox_Input.Text += (string)Button_7.Content;
-            if (InputNumber1 != "") InputNumber1 += (string)Button_7.Content;
-            else InputNumber2 += (string)Button_7.Content;
-        }
-
-        private void Button_8_Click(object sender, RoutedEventArgs e)
-        {
-            TextBox_Input.Text += (string)Button_8.Content;
-            if (InputNumber1 != "") InputNumber1 += (string)Button_8.Content;
-            else InputNumber2 += (string)Button_8.Content;
-        }
-
-        private void Button_9_Click(object sender, RoutedEventArgs e)
-        {
-            TextBox_Input.Text += (string)Button_9.Content;
-            if (InputNumber1 != "") InputNumber1 += (string)Button_9.Content;
-            else InputNumber2 += (string)Button_9.Content;
-        }
-                private void Button_Comma_Click(object sender, RoutedEventArgs e)
+               
+        private void Button_Comma_Click(object sender, RoutedEventArgs e)
         {
             TextBox_Input.Text += (string)Button_Comma.Content;
             if (InputNumber1 != "") InputNumber1 += (string)Button_Comma.Content;
@@ -112,80 +57,100 @@ namespace Calculator
         {
             TextBox_Input.Text = "";
             TextBlock_Result.Text = "";
+            InputNumber1 = "";
+            InputNumber2 = "";
+            resultNumber = 0;
+            operation = 0;
         }
 
+        //Работает неправильно, стирает только на экране
         private void Button_Delete_Click(object sender, RoutedEventArgs e)
         {
             TextBox_Input.Text=TextBox_Input.Text.Remove(TextBox_Input.Text.Length-1);
+            if (InputNumber1 != "") InputNumber1 = InputNumber1.Remove(InputNumber1.Length - 1);
+            if (InputNumber2 != "") InputNumber2 = InputNumber2.Remove(InputNumber2.Length - 1);
         }
 
         private void Button_Plus_Click(object sender, RoutedEventArgs e)
         {
-            TextBox_Input.Text += (string)Button_Plus.Content;
-            if (InputNumber1 != "") number1 = Double.Parse(InputNumber1);
-            InputNumber1 = "";
+            var symbol= (string)Button_Plus.Content;
+            arithmeticOperations(symbol, operation);            
             operation = 1;
-            
         }
 
         private void Button_Minus_Click(object sender, RoutedEventArgs e)
         {
-            TextBox_Input.Text += (string)Button_Minus.Content;
-            if (InputNumber1 != "") number1 = Double.Parse(InputNumber1);
-            InputNumber1 = "";
+            var symbol = (string)Button_Minus.Content;
+            arithmeticOperations(symbol, operation);            
             operation = 2;
         }
 
         private void Button_Multiplication_Click(object sender, RoutedEventArgs e)
         {
-            TextBox_Input.Text += (string)Button_Multiplication.Content;
-            if (InputNumber1 != "") number1 = Double.Parse(InputNumber1);
-            InputNumber1 = "";
+            var symbol = (string)Button_Multiplication.Content;
+            arithmeticOperations(symbol, operation);
             operation = 3;
         }
 
         private void Button_Division_Click(object sender, RoutedEventArgs e)
         {
-            TextBox_Input.Text += (string)Button_Division.Content;
-            if (InputNumber1 != "") number1 = Double.Parse(InputNumber1);
-            InputNumber1 = "";
+            var symbol = (string)Button_Division.Content;
+            arithmeticOperations(symbol, operation);
             operation = 4;
+        }
+
+        private void arithmeticOperations (string symbol, int operatoin)
+        {
+            if (InputNumber1 != "")
+            {
+                TextBox_Input.Text += symbol;
+                resultNumber = Double.Parse(InputNumber1);
+                InputNumber1 = "";                
+            }
+            else if (InputNumber2 != "")
+            {
+                TextBox_Input.Text += symbol;
+                resultNumber = tempResult(resultNumber, InputNumber2, operation);
+                InputNumber2 = "";                
+            }
+        }
+
+        private double tempResult(double resultNumber, string InputNumber2, int operation)
+        {
+            switch (operation)
+            {
+                case 1:
+                    resultNumber += Double.Parse(InputNumber2);
+                    break;
+                case 2:
+                    resultNumber -= Double.Parse(InputNumber2);
+                    break;
+                case 3:
+                    resultNumber *= Double.Parse(InputNumber2);
+                    break;
+                case 4:
+                    if (Double.Parse(InputNumber2) != 0) resultNumber /= Double.Parse(InputNumber2);
+                    else TextBlock_Result.Text = "ошибка";
+                    break;
+                case 0:
+                    break;
+            }            
+            
+            TextBlock_Result.Text = resultNumber.ToString();
+            return resultNumber;
         }
 
         private void Button_Result_Click(object sender, RoutedEventArgs e)
         {
-
-            if (InputNumber2 != "") number2 = Double.Parse(InputNumber2);
-            else if (InputNumber1 != "") result = Double.Parse(InputNumber1);
-                 else result = number1;
-            InputNumber2 = "";
-            switch (operation)
-            {
-                case 1: 
-                    result=number1 + number2;
-                    break;
-                case 2:
-                    result = number1 - number2;
-                    break;
-                case 3:
-                    result = number1 * number2;
-                    break;
-                case 4:
-                    result = number1 / number2;
-                    // добавить на 0 делить нельзя
-                    break;
-                case 0:
-                    TextBlock_Result.Text = TextBox_Input.Text;
-                    break;
-            }
+            if (InputNumber2 != "") TextBlock_Result.Text = tempResult(resultNumber, InputNumber2, operation).ToString();
+            else if (InputNumber1 != "") TextBlock_Result.Text = InputNumber1;
+                 else TextBlock_Result.Text= resultNumber.ToString();
             
-            TextBlock_Result.Text = result.ToString();
+            InputNumber1 = "";
+            InputNumber2 = "";
+            resultNumber = 0;
             operation = 0;
-            InputNumber1 = "0";
             TextBox_Input.Text = "";
-
-
         }
-
     }
 }

@@ -27,7 +27,7 @@
                 Content="0" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,0,0,0" 
                 Height="50" Width="50" FontSize="20"
-                Click="Button_0_Click"/>
+                Click="Button_Digit_Click"/>
 
         <Button x:Name="Button_Comma" 
                 Content="," 
@@ -39,55 +39,55 @@
                 Content="1" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,55" 
                 Height="50" Width="50" FontSize="20" 
-                Click="Button_1_Click"/>
+                Click="Button_Digit_Click"/>
 
         <Button x:Name="Button_2" 
                 Content="2" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,0,0,55" 
                 Height="50" Width="50" FontSize="20" 
-                Click="Button_2_Click" />
+                Click="Button_Digit_Click" />
 
         <Button x:Name="Button_3" 
                 Content="3" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="120,0,0,55" 
                 Height="50" Width="50" FontSize="20"
-                Click="Button_3_Click" />
+                Click="Button_Digit_Click" />
 
         <Button x:Name="Button_4" 
                 Content="4" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,110" 
                 Height="50" Width="50" FontSize="20"
-                Click="Button_4_Click" />
+                Click="Button_Digit_Click" />
 
         <Button x:Name="Button_5" 
                 Content="5" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,0,0,110" 
                 Height="50" Width="50" FontSize="20"
-                Click="Button_5_Click" />
+                Click="Button_Digit_Click" />
 
         <Button x:Name="Button_6" 
                 Content="6" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="120,0,0,110" 
                 Height="50" Width="50" FontSize="20"
-                Click="Button_6_Click"/>
+                Click="Button_Digit_Click"/>
 
         <Button x:Name="Button_7" 
                 Content="7" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,165" 
                 Height="50" Width="50" FontSize="20"
-                Click="Button_7_Click"/>
+                Click="Button_Digit_Click"/>
 
         <Button x:Name="Button_8" 
                 Content="8" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,0,0,165" 
                 Height="50" Width="50" FontSize="20"
-                Click="Button_8_Click"/>
+                Click="Button_Digit_Click"/>
 
         <Button x:Name="Button_9" 
                 Content="9" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="120,0,0,165" 
                 Height="50" Width="50" FontSize="20"
-                Click="Button_9_Click"/>
+                Click="Button_Digit_Click"/>
 
         <Button x:Name="Button_Plus" 
                 Content="+" 
