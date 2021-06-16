@@ -45,11 +45,7 @@ namespace Calculator
             }
             else InputNumber2 += digit;
         }
-        private void Button_Sign_Click(object sender, RoutedEventArgs e)
-        {
-            TextBox_Input.Text += "-";
-        }
-        
+                
         private void Button_Comma_Click(object sender, RoutedEventArgs e)
         {
             TextBox_Input.Text += (string)Button_Comma.Content;
@@ -162,6 +158,5 @@ namespace Calculator
             operation = 0;
             TextBox_Input.Text = "";
         }
-
     }
 }

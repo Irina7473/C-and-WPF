@@ -18,11 +18,11 @@
                      Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}"
                      TextWrapping="Wrap" />
         
-        <Button x:Name="Button_Sign" 
-                Content="+/-" 
+        <Button x:Name="Button_Percent" 
+                Content=" " 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,0" 
                 Height="50" Width="50" FontSize="20"
-                Click="Button_Sign_Click"/>
+               />
 
         <Button x:Name="Button_0" 
                 Content="0" 
