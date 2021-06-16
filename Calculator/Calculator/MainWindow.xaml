@@ -21,7 +21,8 @@
         <Button x:Name="Button_Sign" 
                 Content="+/-" 
                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,0" 
-                Height="50" Width="50" FontSize="20" />
+                Height="50" Width="50" FontSize="20"
+                Click="Button_Sign_Click"/>
 
         <Button x:Name="Button_0" 
                 Content="0" 
