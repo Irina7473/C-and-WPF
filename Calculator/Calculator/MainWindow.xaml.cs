@@ -68,7 +68,12 @@ namespace Calculator
         {
             TextBox_Input.Text=TextBox_Input.Text.Remove(TextBox_Input.Text.Length-1);
             if (InputNumber1 != "") InputNumber1 = InputNumber1.Remove(InputNumber1.Length - 1);
-            if (InputNumber2 != "") InputNumber2 = InputNumber2.Remove(InputNumber2.Length - 1);
+            else if (InputNumber2 != "") InputNumber2 = InputNumber2.Remove(InputNumber2.Length - 1);
+                 else
+                 {
+                InputNumber1 = resultNumber.ToString();                
+                resultNumber = 0;
+                 }            
         }
 
         private void Button_Plus_Click(object sender, RoutedEventArgs e)
